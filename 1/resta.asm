@@ -16,7 +16,7 @@ start:
     add dl, '0'        ; Convertir dígito en DX a carácter ASCII (0–9 → '0'–'9')
     dec si             ; Mover el puntero SI una posición atrás
     mov [si], dl       ; Guardar el carácter ASCII en el buffer
-    cmp ax, 0          ; ¿Quedan más dígitos?
+    cmp ax, 0          
     jne .convert       ; Si sí, seguir dividiendo
 
 .print:
@@ -24,7 +24,7 @@ start:
     mov dl, [si]       ; Cargar el siguiente carácter desde el buffer
     int 21h            ; Imprimir el carácter en pantalla
     inc si             ; Avanzar al siguiente carácter
-    cmp si, ascii_buffer + 6    ; ¿Llegamos al final del buffer?
+    cmp si, ascii_buffer + 6    
     jne .print         ; Si no, seguir imprimiendo
 
     ; --- Finalizar el programa ---
