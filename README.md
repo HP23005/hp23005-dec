@@ -66,5 +66,5 @@ multiplicacion.com
 # En la terminal de linux
 nasm -f elf division.asm
 ld -m elf_i386 -o div division.o
-./division
+./div
 ```
